@@ -6,12 +6,7 @@ var constants = {
 	ticks: 25,
 	money : 5,
 	hitpoints : 10,
-	mediPackCost : 5,
-	mediPackFactor : 1.5,
-	mediPackHealth : 1,
-	towerBuildCost : 5,
-	towerBuildFactor : 1.85,
-	towerBuildNumber : 4,
+	towerBuildNumber : 1000,
 };
 
 /*
@@ -61,7 +56,7 @@ var resources = {
 		{ name : 'mgnest', value : 'Content/sprites/mgnest.png' },
 		{ name : 'mgshot', value : 'Content/sprites/mgshot.png' },
 		{ name : 'newunit', value : 'Content/sprites/newunit.png' },
-		{ name : 'rock', value : 'Content/sprites/rock.png' },
+		{ name : 'rock', value : 'Content/sprites/rock_drawing.png' },
 		{ name : 'rope', value : 'Content/sprites/rope.png' },
 		{ name : 'shellshot', value : 'Content/sprites/shellshot.png' },
 		{ name : 'suns', value : 'Content/sprites/suns.png' },
@@ -70,7 +65,7 @@ var resources = {
 	],
 	sounds : [
 		{ name : 'hold_the_line', value : { ogg : 'Content/music/hold_the_line.ogg', mp3 : 'Content/music/hold_the_line.mp3' }},
-		{ name : 'burn_them_down', value : { ogg : 'Content/music/burn_them_down.ogg', mp3 : 'Content/music/burn_them_down.mp3' }},
+		{ name : 'burn_them_down', value : { ogg : 'Content/music/heathens.ogg', mp3 : 'Content/music/heathens.mp3' }},
 		{ name : 'ak47-1', value : { ogg : 'Content/effects/ak47-1.ogg', mp3 : 'Content/effects/ak47-1.mp3' }},
 		{ name : 'artillery', value : { ogg : 'Content/effects/artillery.ogg', mp3 : 'Content/effects/artillery.mp3' }},
 		{ name : 'explosion', value : { ogg : 'Content/effects/explosion.ogg', mp3 : 'Content/effects/explosion.mp3' }},

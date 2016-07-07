@@ -30,12 +30,9 @@ var GameLogic = Base.extend({
 		me.units  = [];
 		me.shots  = [];
 
-		me.mediPackCost     = constants.mediPackCost;
-		me.mediPackFactor   = constants.mediPackFactor;
-		me.towerBuildCost   = constants.towerBuildCost;
-		me.towerBuildFactor = constants.towerBuildFactor;
+
 		me.maxTowerNumber   = constants.towerBuildNumber;
-		me.mediPackHealth   = constants.mediPackHealth;
+	
 
 		me.view          = view;
 		me.player        = new Player();
@@ -255,37 +252,7 @@ var GameLogic = Base.extend({
 			}
 		}
 	},
-	buyMediPack: function() {
-		var cost = this.mediPackCost;
 
-		if (this.player.money > cost) {
-			this.player.addHitpoints(this.mediPackHealth);
-			this.mediPackCost = ~~(this.mediPackFactor * cost);
-			this.player.addMoney(-cost);
-			return true;
-		}
-
-		return false;
-	},
-	buyTowerBuildRight: function() {
-		var cost = this.towerBuildCost;
-
-		if (this.player.money > cost) {
-			var numShooting = this.getNumShooting();
-			this.maxTowerNumber++;
-
-			this.triggerEvent(events.towerNumberChanged, {
-				current: numShooting,
-				maximum: this.maxTowerNumber,
-			});
-
-			this.towerBuildCost = ~~(this.towerBuildFactor * cost);
-			this.player.addMoney(-cost);
-			return true;
-		}
-
-		return false;
-	},
 });
 
 /*

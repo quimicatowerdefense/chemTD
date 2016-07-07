@@ -1,12 +1,12 @@
 body {
-	font: 12px Arial;
+	font: 12px Gadugi;
 	overflow: hidden;
 	background: url(page.jpg);
 	background-size: 100%;
 }
 
 button {
-	font: 16px Arial;
+	font: 16px Arial Black;
 	font-weight: bold;
 	width: 200px;
 	height: 40px;

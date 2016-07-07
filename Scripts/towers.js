@@ -17,7 +17,7 @@ var Rock = Tower.extend({
 	rock.speed = 0;
 	rock.range = 0;
 	rock.rating = 0;
-	rock.cost = 1.0;
+	rock.cost = 0;
 	types.towers['Rock'] = rock;
 });
 

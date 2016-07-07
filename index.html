@@ -22,8 +22,8 @@
 	<div id="towers"></div>
 	<div id="buttons">
 		<button id="startWave">Start Wave</button>
-		<button id="buyMedipack">Buy Medipack</button>
-		<button id="buyTowerbuild">Buy Towerbuild</button>
+		<!--<button id="buyMedipack">Buy Medipack</button>-->
+		<!--<button id="buyTowerbuild">Buy Towerbuild</button>-->
 	</div>
 </div>
 <script src="Scripts/manifest.js"></script>
@@ -51,8 +51,8 @@
 	var timeInfo = document.querySelector('#time-info');
 	var soundInfo = document.querySelector('#sound-info');
 	var startWaveButton = document.querySelector('#startWave');
-	var buyMedipackButton = document.querySelector('#buyMedipack');
-	var buyTowerbuildButton = document.querySelector('#buyTowerbuild');
+	<!--var buyMedipackButton = document.querySelector('#buyMedipack');-->
+	<!--var buyTowerbuildButton = document.querySelector('#buyTowerbuild');-->
 
 	var towerType = undefined;
 	var getMousePosition = function(evt) {
@@ -106,12 +106,12 @@
 		startWaveButton.addEventListener(events.click, function() {
 			logic.beginWave();
 		});
-		buyMedipackButton.addEventListener(events.click, function() {
+ 		/*buyMedipackButton.addEventListener(events.click, function() {
 			logic.buyMediPack();
 		});
 		buyTowerbuildButton.addEventListener(events.click, function() {
 			logic.buyTowerBuildRight();
-		});
+		});*/
 		soundInfo.addEventListener(events.click, function() {
 			var on = 'on';
 			var off = 'off'
