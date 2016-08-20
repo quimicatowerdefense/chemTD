@@ -1,126 +1,128 @@
 "use strict";
 /*
- * The Standard unit
+ * The SalSoluble unit
  */
-var Mario = Unit.extend({
+var SalSoluble = Unit.extend({
 	init: function() {
-		this._super(Mario.speed, 100, MazeStrategy.manhattan, Mario.hitpoints);
-		this.createVisual(Mario.sprite, [8,8,8,8]);
+		this._super(SalSoluble.speed, 100, MazeStrategy.manhattan, SalSoluble.hitpoints);
+		this.createVisual(SalSoluble.sprite, [1,1,1,1]);
 	},
 }, function(enemy) {
 	enemy.speed = 2.0;
 	enemy.hitpoints = 10;
 	enemy.description = 'You have to be careful with that plumber.';
-	enemy.nickName = 'Mario';
-	enemy.sprite = 'mario';
+	enemy.nickName = 'SalSoluble';
+	enemy.sprite = 'SalSoluble';
 	enemy.rating = enemy.speed * enemy.hitpoints;
-	types.units['Mario'] = enemy;
+	types.units['SalSoluble'] = enemy;
 });
 
 /*
- * The Rope unit
+ * The SalInsoluble unit
  */
-var Rope = Unit.extend({
+var SalInsoluble = Unit.extend({
 	init: function() {
-		this._super(Rope.speed, 80, MazeStrategy.euclideanNoSQR, Rope.hitpoints);
-		this.createVisual(Rope.sprite, [4, 4, 4, 4], 0.8);
+		this._super(SalInsoluble.speed, 80, MazeStrategy.euclideanNoSQR, SalInsoluble.hitpoints);
+		this.createVisual(SalInsoluble.sprite, [1, 1, 1, 1]);
 	},
-}, function(rope) {
-	rope.speed = 2.0;
-	rope.hitpoints = 20;
-	rope.description = 'An ugly rope that tries to conquer the zone. Watch out when they mass up!';
-	rope.nickName = 'Rope';
-	rope.sprite = 'rope';
-	rope.rating = rope.speed * rope.hitpoints;
-	types.units['Rope'] = rope;
+}, function(SalInsoluble) {
+	SalInsoluble.speed = 2.0;
+	SalInsoluble.hitpoints = 20;
+	SalInsoluble.description = 'An ugly SalInsoluble that tries to conquer the zone. Watch out when they mass up!';
+	SalInsoluble.nickName = 'SalInsoluble';
+	SalInsoluble.sprite = 'SalInsoluble';
+	SalInsoluble.rating = SalInsoluble.speed * SalInsoluble.hitpoints;
+	types.units['SalInsoluble'] = SalInsoluble;
 });
 
 /*
- * The Fire Wizard Robe unit
+ * A derived AcidInsoluble
  */
-var FireWizzrobe = Unit.extend({
+var AcidInsoluble = Unit.extend({
 	init: function() {
-		this._super(FireWizzrobe.speed, 70, MazeStrategy.manhattan, FireWizzrobe.hitpoints);
-		this.createVisual(FireWizzrobe.sprite, [3, 3, 3, 3], 1.4);
+		this._super(AcidInsoluble.speed, 25, MazeStrategy.diagonalShortCut, AcidInsoluble.hitpoints);
+		this.createVisual(AcidInsoluble.sprite, [1, 1, 1, 1]);
 	},
-}, function(wizz) {
-	wizz.speed = 3.0;
-	wizz.hitpoints = 30;
-	wizz.description = 'The wizard with the fire robe is quite fast, but does not take very much.';
-	wizz.nickName = 'Wizzrobe';
-	wizz.sprite = 'firewizzrobe';
-	wizz.rating = wizz.speed * wizz.hitpoints;
-	types.units['FireWizzrobe'] = wizz;
+}, function(AcidInsoluble) {
+	AcidInsoluble.speed = 5.0;
+	AcidInsoluble.hitpoints = 200;
+	AcidInsoluble.description = 'This AcidInsoluble is just a single blob. It is ultra fast and has quite some armor. It will give you some trouble.';
+	AcidInsoluble.nickName = 'AcidInsoluble';
+	AcidInsoluble.sprite = 'AcidInsoluble';
+	AcidInsoluble.rating = AcidInsoluble.speed * AcidInsoluble.hitpoints;
+	types.units['AcidInsoluble'] = AcidInsoluble;
+});
+
+
+/*
+ * The BaseInsoluble unit
+ */
+var BaseInsoluble = Unit.extend({
+	init: function() {
+		this._super(BaseInsoluble.speed, 80, MazeStrategy.euclideanNoSQR, BaseInsoluble.hitpoints);
+		this.createVisual(BaseInsoluble.sprite, [1, 1, 1, 1]);
+	},
+}, function(BaseInsoluble) {
+	BaseInsoluble.speed = 2.5;
+	BaseInsoluble.hitpoints = 150;
+	BaseInsoluble.description = 'The BaseInsoluble is an ancient warrier that takes quite some hits. His speed is superior to most other units.';
+	BaseInsoluble.nickName = 'BaseInsoluble';
+	BaseInsoluble.sprite = 'BaseInsoluble';
+	BaseInsoluble.rating = BaseInsoluble.speed * BaseInsoluble.hitpoints;
+	types.units['BaseInsoluble'] = BaseInsoluble;
 });
 
 /*
- * The Air Wolf unit
+ * The metalls unit
  */
-var AirWolf = Unit.extend({
+var metalls = Unit.extend({
 	init: function() {
-		this._super(AirWolf.speed, 50, MazeStrategy.air, AirWolf.hitpoints);
-		this.createVisual(AirWolf.sprite, [4]);
+		this._super(metalls.speed, 70, MazeStrategy.manhattan, metalls.hitpoints);
+		this.createVisual(metalls.sprite, [1,1, 1, 1] );
 	},
-}, function(wolf) {
-	wolf.speed = 2.0;
-	wolf.hitpoints = 40;
-	wolf.description = 'The air wolf is the only aerial unit in the game. Do not underestimate him as an air wolf fleet could kill you.';
-	wolf.nickName = 'Wolf';
-	wolf.sprite = 'airwolf';
-	wolf.rating = wolf.speed * wolf.hitpoints * 1.2;
-	types.units['AirWolf'] = wolf;
+}, function(metalls) {
+	metalls.speed = 3.0;
+	metalls.hitpoints = 30;
+	metalls.description = 'The metalls with the fire robe is quite fast, but does not take very much.';
+	metalls.nickName = 'metalls';
+	metalls.sprite = 'metalls';
+	metalls.rating = metalls.speed * metalls.hitpoints;
+	types.units['metalls'] = metalls;
 });
 
 /*
- * The dark nut unit
+ * The big metallsNobles unit
  */
-var DarkNut = Unit.extend({
+var metallsNobles = Unit.extend({
 	init: function() {
-		this._super(DarkNut.speed, 80, MazeStrategy.euclideanNoSQR, DarkNut.hitpoints);
-		this.createVisual(DarkNut.sprite, [4, 4, 4, 4]);
+		this._super(metallsNobles.speed, 125, MazeStrategy.euclidean, metallsNobles.hitpoints);
+		this.createVisual(metallsNobles.sprite, [1, 1, 1, 1]);
 	},
-}, function(nut) {
-	nut.speed = 2.5;
-	nut.hitpoints = 150;
-	nut.description = 'The dark nut is an ancient warrier that takes quite some hits. His speed is superior to most other units.';
-	nut.nickName = 'Dark Nut';
-	nut.sprite = 'darknut';
-	nut.rating = nut.speed * nut.hitpoints;
-	types.units['DarkNut'] = nut;
+}, function(metallsNobles) {
+	metallsNobles.speed = 1.0;
+	metallsNobles.hitpoints = 600;
+	metallsNobles.description = 'The unit is actually called metallsNobles and not Armor, however, Armor would have been a good name as well. You will need some fire power to bring him down.';
+	metallsNobles.nickName = 'metallsNobles';
+	metallsNobles.sprite = 'metallsNobles';
+	metallsNobles.rating = metallsNobles.speed * metallsNobles.hitpoints;
+	types.units['metallsNobles'] = metallsNobles;
 });
 
-/*
- * A derived unit
- */
-var Speedy = Unit.extend({
-	init: function() {
-		this._super(Speedy.speed, 25, MazeStrategy.diagonalShortCut, Speedy.hitpoints);
-		this.createVisual(Speedy.sprite, [20]);
-	},
-}, function(unit) {
-	unit.speed = 7.0;
-	unit.hitpoints = 200;
-	unit.description = 'This unit is just a single blob. It is ultra fast and has quite some armor. It will give you some trouble.';
-	unit.nickName = 'HAL';
-	unit.sprite = 'newunit';
-	unit.rating = unit.speed * unit.hitpoints;
-	types.units['Speedy'] = unit;
-});
 
 /*
- * The big Armored unit
+ * The big MateriaOrganica unit
  */
-var Armos = Unit.extend({
+var MateriaOrganica = Unit.extend({
 	init: function() {
-		this._super(Armos.speed, 125, MazeStrategy.euclidean, Armos.hitpoints);
-		this.createVisual(Armos.sprite, [4, 4, 4, 4], 1.2);
+		this._super(MateriaOrganica.speed, 125, MazeStrategy.euclidean, MateriaOrganica.hitpoints);
+		this.createVisual(MateriaOrganica.sprite, [1, 1, 1, 1]);
 	},
-}, function(armos) {
-	armos.speed = 1.0;
-	armos.hitpoints = 600;
-	armos.description = 'The unit is actually called Armos and not Armor, however, Armor would have been a good name as well. You will need some fire power to bring him down.';
-	armos.nickName = 'Armos';
-	armos.sprite = 'armos';
-	armos.rating = armos.speed * armos.hitpoints;
-	types.units['Armos'] = armos;
+}, function(MateriaOrganica) {
+	MateriaOrganica.speed = 2.5;
+	MateriaOrganica.hitpoints = 600;
+	MateriaOrganica.description = 'The unit is actually called MateriaOrganica and not Armor, however, Armor would have been a good name as well. You will need some fire power to bring him down.';
+	MateriaOrganica.nickName = 'MateriaOrganica';
+	MateriaOrganica.sprite = 'MateriaOrganica';
+	MateriaOrganica.rating = MateriaOrganica.speed * MateriaOrganica.hitpoints;
+	types.units['MateriaOrganica'] = MateriaOrganica;
 });
