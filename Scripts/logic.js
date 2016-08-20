@@ -191,6 +191,9 @@ var GameLogic = Base.extend({
 	beginWave: function() {
 		if (this.state === GameState.building) {
 			var me = this;
+			
+			this.createRocks();
+			
 			me.state = GameState.waving;
 			var wave = me.waves.next();
 			wave.addEventListener(events.waveFinished, function() {
@@ -252,7 +255,15 @@ var GameLogic = Base.extend({
 			}
 		}
 	},
-
+	createRocks: function(){
+		var numRocks=200;
+		for (var i=0; i< numRocks; i++){
+			var x=Math.random()*this.maze.gridDim.width;
+			var y=Math.random()*this.maze.gridDim.height;
+			var pos = new Point(~~x, ~~y);
+			this.buildTower(pos,types.towers['Rock']);
+		}
+	},
 });
 
 /*
