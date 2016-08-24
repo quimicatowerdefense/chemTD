@@ -44,6 +44,7 @@ var GameLogic = Base.extend({
 
 		me.player.addEventListener(events.playerDefeated, function(e) {
 			me.triggerEvent(events.playerDefeated, e);
+			this.createLoser();
 			me.finish();
 		});
 
@@ -256,7 +257,16 @@ var GameLogic = Base.extend({
 		}
 	},
 	createRocks: function(){
-		var numRocks=200;
+		var numRocks=0;
+		for (var i=0; i< numRocks; i++){
+			var x=Math.random()*this.maze.gridDim.width;
+			var y=Math.random()*this.maze.gridDim.height;
+			var pos = new Point(~~x, ~~y);
+			this.buildTower(pos,types.towers['Rock']);
+		}
+	},
+	createLoser: function(){
+		var numRocks=50;
 		for (var i=0; i< numRocks; i++){
 			var x=Math.random()*this.maze.gridDim.width;
 			var y=Math.random()*this.maze.gridDim.height;

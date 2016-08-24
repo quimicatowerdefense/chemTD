@@ -6,13 +6,13 @@
 var Rock = Tower.extend({
 	init: function() {
 		this._super(Rock.speed, 200, Rock.range);
-		this.createVisual(Rock.sprite, [1]);
+		this.createVisual(Rock.sprite, [6]);
 	},
 }, function(rock) {
 	rock.description = "Just a rock ... a big ROCK. If you can't boulder you have to go around.";
 	rock.nickName = 'Rock';
 	rock.sprite = 'rock';
-	rock.frames = 1;
+	rock.frames = 6;
 	rock.shotType = {};
 	rock.speed = 0;
 	rock.range = 0;
@@ -22,30 +22,74 @@ var Rock = Tower.extend({
 });
 
 /*
- * The efficient MG nest
+ * The efficient WaterTower
  */
-var MGNest = Tower.extend({
+var WaterTower = Tower.extend({
 	init: function() {
-		this._super(MGNest.speed, 25, MGNest.range, MGNest.shotType);
-		this.createVisual(MGNest.sprite, [1]);
+		this._super(WaterTower.speed, 25, WaterTower.range, WaterTower.shotType);
+		this.createVisual(WaterTower.sprite, [1]);
 	},
-}, function(nest) {
-	nest.description = 'The MG Nest is cheap but powerful. It can help you a lot against low armored units.';
-	nest.nickName = 'MG Nest';
-	nest.sprite = 'mgnest';
-	nest.frames = 1;
-	nest.shotType = MGShot;
-	nest.speed = 4.0;
-	nest.range = 4.0;
-	nest.rating = nest.speed * Math.log(nest.range + 1.0) * nest.shotType.rating;
-	nest.cost = Math.round(nest.rating / 6.0 + 1.0);
-	types.towers['MGNest'] = nest;
+}, function(water) {
+	water.description = 'The Water Tower is cheap but powerful. It can help you a lot against low armored elements.';
+	water.nickName = 'Water Tower';
+	water.sprite = 'WaterTower';
+	water.frames = 1;
+	water.shotType = WaterShot;
+	water.speed = 4.0;
+	water.range = 4.0;
+	water.rating = water.speed * Math.log(water.range + 1.0) * water.shotType.rating;
+	water.cost = Math.round(water.rating / 6.0 + 1.0);
+	types.towers['watertower'] = water;
 });
+
+
+/*
+ * The TemperatureTower
+ */
+var TemperatureTower = Tower.extend({
+	init: function() {
+		this._super(TemperatureTower.speed, 200, TemperatureTower.range, TemperatureTower.shotType);
+		this.createVisual(TemperatureTower.sprite, [4]);
+	},
+}, function(temperature) {
+	temperature.description = 'Burn them down but a bit faster ... Excellent for slow armored enemies, but fails against strong armored elements.';
+	temperature.nickName = 'Temperature Tower';
+	temperature.sprite = 'TemperatureTower';
+	temperature.frames = 4;
+	temperature.shotType = TemperatureShot;
+	temperature.speed = 6.0;
+	temperature.range = 2.0;
+	temperature.rating = temperature.speed * Math.log(temperature.range + 1.0) * temperature.shotType.rating;
+	temperature.cost = Math.round(temperature.rating / 6.0 + 1.0);
+	types.towers['TemperatureTower'] = temperature;
+});
+
+/*
+ * The famous gate to hell
+ */
+var BaseTower = Tower.extend({
+	init: function() {
+		this._super(BaseTower.speed, 200, BaseTower.range, BaseTower.shotType);
+		this.createVisual(BaseTower.sprite, [6]);
+	},
+}, function(base) {
+	base.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill high speed units.';
+	base.nickName = 'Base Tower';
+	base.sprite = 'BaseTower';
+	base.frames = 6;
+	base.shotType = BaseShot;
+	base.speed = 1.0;
+	base.range = 2.0;
+	base.rating = base.speed * Math.log(base.range + 1.0) * base.shotType.rating;
+	base.cost = Math.round(base.rating / 6.0 + 1.0);
+	types.towers['BaseTower'] = base;
+});
+
 
 /*
  * The canon tower
  */
-var CanonTower = Tower.extend({
+/*var CanonTower = Tower.extend({
 	init: function() {
 		this._super(CanonTower.speed, 50, CanonTower.range, CanonTower.shotType);
 		this.createVisual(CanonTower.sprite, [1, 1, 1, 1]);
@@ -62,89 +106,48 @@ var CanonTower = Tower.extend({
 	canon.cost = Math.round(canon.rating / 6.0 + 1.0);
 	types.towers['CanonTower'] = canon;
 });
-
-/*
- * The flame tower
- */
-var FlameTower = Tower.extend({
-	init: function() {
-		this._super(FlameTower.speed, 200, FlameTower.range, FlameTower.shotType);
-		this.createVisual(FlameTower.sprite, [4]);
-	},
-}, function(flame) {
-	flame.description = 'Burn them down but a bit faster ... Excellent for slow armored units, but fails against strong armored enemies.';
-	flame.nickName = 'Flame tower';
-	flame.sprite = 'flametower';
-	flame.frames = 4;
-	flame.shotType = FlameShot;
-	flame.speed = 6.0;
-	flame.range = 2.0;
-	flame.rating = flame.speed * Math.log(flame.range + 1.0) * flame.shotType.rating;
-	flame.cost = Math.round(flame.rating / 6.0 + 1.0);
-	types.towers['FlameTower'] = flame;
-});
-
+*/
 
 
 /*
- * The ice tower
+ * The AcidTower
  */
-var IceTower = Tower.extend({
+var AcidTower = Tower.extend({
 	init: function() {
-		this._super(IceTower.speed, 200, IceTower.range, IceTower.shotType);
-		this.createVisual(IceTower.sprite, [1]);
+		this._super(AcidTower.speed, 200, AcidTower.range, AcidTower.shotType);
+		this.createVisual(AcidTower.sprite, [1]);
 	},
-}, function(ice) {
-	ice.description = 'Cool. Slow shots, but with high efficiency. The right choice against slow strongly armored units.';
-	ice.nickName = 'Ice-Tower';
-	ice.sprite = 'icetower';
-	ice.frames = 1;
-	ice.shotType = IceShot;
-	ice.speed = 2.0;
-	ice.range = 6.0;
-	ice.rating = ice.speed * Math.log(ice.range + 1.0) * ice.shotType.rating;
-	ice.cost = Math.round(ice.rating / 6.0 + 1.0);
-	types.towers['IceTower'] = ice;
+}, function(acid) {
+	acid.description = 'Cool. Slow shots, but with high efficiency. The right choice against slow strongly armored units.';
+	acid.nickName = 'Acid Tower';
+	acid.sprite = 'AcidTower';
+	acid.frames = 1;
+	acid.shotType = AcidShot;
+	acid.speed = 2.0;
+	acid.range = 6.0;
+	acid.rating = acid.speed * Math.log(acid.range + 1.0) * acid.shotType.rating;
+	acid.cost = Math.round(acid.rating / 6.0 + 1.0);
+	types.towers['AcidTower'] = acid;
 });
 
 /*
- * The laser tower
+ * The OxidTower
  */
-var LaserTower = Tower.extend({
+var OxidTower = Tower.extend({
 	init: function() {
-		this._super(LaserTower.speed, 25, LaserTower.range, LaserTower.shotType);
-		this.createVisual(LaserTower.sprite, [1]);
+		this._super(OxidTower.speed, 25, OxidTower.range, OxidTower.shotType);
+		this.createVisual(OxidTower.sprite, [1]);
 	},
-}, function(laser) {
-	laser.description = "Won't play with you, but does it with high efficiency. Really fast low damage shots.";
-	laser.nickName = 'Faser';
-	laser.sprite = 'lasertower';
-	laser.frames = 1;
-	laser.shotType = LaserShot;
-	laser.speed = 3.0;
-	laser.range = 5.0;
-	laser.rating = laser.speed * Math.log(laser.range + 1.0) * laser.shotType.rating;
-	laser.cost = Math.round(laser.rating / 6.0 + 1.0);
-	types.towers['LaserTower'] = laser;
+}, function(oxid) {
+	oxid.description = "Won't play with you, but does it with high efficiency. Really fast low damage shots.";
+	oxid.nickName = 'Oxid Tower';
+	oxid.sprite = 'OxidTower';
+	oxid.frames = 1;
+	oxid.shotType = OxidShot;
+	oxid.speed = 3.0;
+	oxid.range = 5.0;
+	oxid.rating = oxid.speed * Math.log(oxid.range + 1.0) * oxid.shotType.rating;
+	oxid.cost = Math.round(oxid.rating / 6.0 + 1.0);
+	types.towers['OxidTower'] = oxid;
 });
 
-/*
- * The famous gate to hell
- */
-var GateToHell = Tower.extend({
-	init: function() {
-		this._super(GateToHell.speed, 200, GateToHell.range, GateToHell.shotType);
-		this.createVisual(GateToHell.sprite, [6]);
-	},
-}, function(gate) {
-	gate.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill high speed units.';
-	gate.nickName = 'Hellgate';
-	gate.sprite = 'gatetohell';
-	gate.frames = 6;
-	gate.shotType = HellShot;
-	gate.speed = 1.0;
-	gate.range = 2.0;
-	gate.rating = gate.speed * Math.log(gate.range + 1.0) * gate.shotType.rating;
-	gate.cost = Math.round(gate.rating / 6.0 + 1.0);
-	types.towers['GateToHell'] = gate;
-});

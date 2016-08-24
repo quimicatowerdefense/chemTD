@@ -265,14 +265,24 @@ var Tower = GameObject.extend({
  * The unit base
  */
 var Unit = GameObject.extend({
- 	init: function(speed, animationDelay, mazeStrategy, hitpoints) {
+ 	init: function(speed, animationDelay, mazeStrategy, hitpoints, waterhealth, temphealth, acidhealth, basehealth, oxidhealth) {
 		this._super(speed, animationDelay);
  		this.timer = 0;
  		this.path = new Path([]);
  		this.mazeCoordinates = new Point();
  		this.damage = 1;
+ 		this.waterdamage = 1;
+		this.tempdamage =1;
+		this.aciddamage =1;
+		this.basedamage =1;
+		this.oxiddamage =1;
  		this.strategy = mazeStrategy || MazeStrategy.air;
  		this.hitpoints = hitpoints || 0;
+		this.waterhealth = waterhealth || 0;
+		this.temphealth = temphealth || 0;
+		this.acidhealth = acidhealth || 0;
+		this.basehealth = basehealth || 0;
+		this.oxidhealth = oxidhealth || 0;
  		this.health = this.hitpoints;
  		this.direction = Direction.right;
  		this.registerEvent(events.accomplished);
@@ -307,12 +317,24 @@ var Unit = GameObject.extend({
  	},
  	hit: function(shot) {
  		this.health -= shot.damage;
+		this.waterhealth -=shot.waterdamage;
+		this.temphealth -=shot.tempdamage;
+		this.acidhealth -=shot.aciddamage;
+		this.basehealth -=shot.basedamage;
+		this.oxidhealth -=shot.oxiddamage;
 
- 		if (!this.dead && this.health <= 0) {
+ 		if (!this.dead && this.waterhealth <= 0 && this.temphealth <= 0 && this.basehealth <= 0 && this.acidhealth <= 0 && this.oxidhealth <= 0) {
  			this.health = 0;
+			this.waterhealth= 0;
+			this.temphealth =0;
+			this.acidhealth =0;
+			this.basehealth =0;
+			this.oxidhealth =0;
  			this.dead = true;
  			this.triggerEvent(events.died, this);
  			this.playDeathSound();
+			
+		
  		}
  	},
  });
@@ -321,9 +343,14 @@ var Unit = GameObject.extend({
  * The shot base
  */
 var Shot = GameObject.extend({
-	init: function(speed, animationDelay, damage, impactRadius) {
+	init: function(speed, animationDelay, damage, waterdamage, tempdamage, aciddamage, basedamage, oxiddamage, impactRadius) {
 		this._super(speed, animationDelay);
 		this.damage = damage || 0;
+		this.waterdamage = waterdamage || 0;
+		this.tempdamage = tempdamage || 0;
+		this.basedamage = basedamage || 0;
+		this.aciddamage = aciddamage || 0;
+		this.oxiddamage = oxiddamage || 0;
 		this.targets = [];
 		this.impactRadius = impactRadius || 0.5;
 		this.timeToDamagability = ~~(200 / this.speed);

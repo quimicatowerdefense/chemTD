@@ -1,8 +1,141 @@
 "use strict";
+
+/*
+ * A shot from the Water Tower
+ */
+var WaterShot = Shot.extend({
+	init: function() {
+		this._super(WaterShot.speed, 25, WaterShot.damage, WaterShot.waterdamage, WaterShot.tempdamage, WaterShot.aciddamage, WaterShot.basedamage, WaterShot.oxiddamage, WaterShot.impactRadius);
+		this.createVisual(WaterShot.sprite, [1, 1, 1, 1], 0.3);
+		this.playSound('WaterShot');
+	},
+}, function(water) {
+	water.nickName = 'Water Shot';
+	water.description = 'Standard WaterShot: 7.72 mm full metal jacket that handles most guys.';
+	water.sprite = 'WaterShot';
+	water.frames = 4;
+	water.speed = 8.0;
+	water.damage = 1;
+	water.waterdamage = 2;
+	water.tempdamage = 0;
+	water.aciddamage = 0;
+	water.basedamage = 0;
+	water.oxiddamage = 0;
+	water.impactRadius = 0.5;
+	water.rating = Math.log(water.speed + 1) * water.damage * Math.log(water.impactRadius + 1);
+	types.shots['WaterShot'] = water;
+});
+
+/*
+ * The Temperature
+ */
+var TemperatureShot = Shot.extend({
+	init: function() {
+		this._super(TemperatureShot.speed, 100, TemperatureShot.damage, TemperatureShot.waterdamage, TemperatureShot.tempdamage, TemperatureShot.aciddamage, TemperatureShot.basedamage, TemperatureShot.oxiddamage, TemperatureShot.impactRadius);
+		this.createVisual(TemperatureShot.sprite, [8]);
+		this.playSound('TemperatureShot');
+	},
+}, function(temperature) {
+	temperature.nickName = 'Red Napalm';
+	temperature.description = "Napalm power you don't want to mess with.";
+	temperature.sprite = 'TemperatureShot';
+	temperature.frames = 8;
+	temperature.speed = 4.5;
+	temperature.damage = 1;
+	temperature.waterdamage = 0;
+	temperature.tempdamage = 2;
+	temperature.aciddamage = 0;
+	temperature.basedamage = 0;
+	temperature.oxiddamage = 0;
+	temperature.impactRadius = 0.5;
+	temperature.rating = Math.log(temperature.speed + 1) * temperature.damage * Math.log(temperature.impactRadius + 1);
+	types.shots['TemperatureShot'] = temperature;
+});
+
+/*
+ * The shot from hell
+ */
+var BaseShot = Shot.extend({
+	init: function() {
+		this._super(BaseShot.speed, 75, BaseShot.damage, BaseShot.waterdamage, BaseShot.tempdamage, BaseShot.aciddamage, BaseShot.basedamage, BaseShot.oxiddamage, BaseShot.impactRadius);
+		this.createVisual(BaseShot.sprite, [12]);
+		this.playSound('BaseShot');
+	},
+}, function(base) {
+	base.nickName = 'HDEB';
+	base.description = 'The High Dark Energy Density is shot by the gate to hell. It catches your soul and gives you the rest.';
+	base.sprite = 'BaseShot';
+	base.frames = 12;
+	base.speed = 10.0;
+	base.impactRadius = 0.5;
+	base.damage = 1;
+	base.waterdamage = 0;
+	base.tempdamage = 0;
+	base.aciddamage = 4;
+	base.basedamage = 0;
+	base.oxiddamage = 0;
+	base.rating = Math.log(base.speed + 1) * base.damage * Math.log(base.impactRadius + 1);
+	types.shots['BaseShot'] = base;
+});
+
+/*
+ * The Acid Shot
+ */
+var AcidShot = Shot.extend({
+	init: function() {
+		this._super(AcidShot.speed, 200, AcidShot.damage, AcidShot.waterdamage, AcidShot.tempdamage, AcidShot.aciddamage, AcidShot.basedamage, AcidShot.oxiddamage, AcidShot.impactRadius);
+		this.createVisual(AcidShot.sprite, [4]);
+		this.playSound('AcidShot');
+	},
+}, function(acid) {
+	acid.nickName = 'Snowball 5';
+	acid.description = 'An experimental super cold plasma (cold is relative here).';
+	acid.sprite = 'AcidShot';
+	acid.frames = 4;
+	acid.speed = 4.0;
+	acid.impactRadius = 0.5;
+	acid.damage = 1;
+	acid.waterdamage = 0;
+	acid.tempdamage = 0;
+	acid.aciddamage = 0;
+	acid.basedamage = 3;
+	acid.oxiddamage = 0;
+	acid.rating = Math.log(acid.speed + 1) * acid.damage * Math.log(acid.impactRadius + 1);
+	types.shots['AcidShot'] = acid;
+});
+
+/*
+ * An Oxid Shot
+ */
+var OxidShot = Shot.extend({
+	init: function() {
+		this._super(OxidShot.speed, 25, OxidShot.damage, OxidShot.waterdamage, OxidShot.tempdamage, OxidShot.aciddamage, OxidShot.basedamage, OxidShot.oxiddamage, OxidShot.impactRadius);
+		this.createVisual(OxidShot.sprite, [6, 6, 6, 6]);
+		this.playSound('OxidShot');
+	},
+}, function(oxid) {
+	oxid.nickName = 'OxidShot';
+	oxid.description = 'Neutrino shot: Hits before fired (from the perspective of any observer).';
+	oxid.sprite = 'OxidShot';
+	oxid.frames = 24;
+	oxid.speed = 9.5;
+	oxid.impactRadius = 0.5;
+	oxid.damage = 1;
+	oxid.waterdamage = 0;
+	oxid.tempdamage = 0;
+	oxid.aciddamage = 0;
+	oxid.basedamage = 0;
+	oxid.oxiddamage = 1;
+	oxid.rating = Math.log(oxid.speed + 1) * oxid.damage * Math.log(oxid.impactRadius + 1);
+	types.shots['OxidShot'] = oxid;
+});
+
+
+
 /*
  * The standard shot
  */
-var StandardShot = Shot.extend({
+/*var StandardShot = Shot.extend({
 	init: function() {
 		this._super(StandardShot.speed, 15, StandardShot.damage, StandardShot.impactRadius);
 		this.createVisual(StandardShot.sprite, [1], 0.25);
@@ -18,118 +151,13 @@ var StandardShot = Shot.extend({
 	std.impactRadius = 0.5;
 	std.rating = Math.log(std.speed + 1) * std.damage * Math.log(std.impactRadius + 1);
 	//types.shots['StandardShot'] = std;
-});
+});*/
 
-
-/*
- * The flames
- */
-var FlameShot = Shot.extend({
-	init: function() {
-		this._super(FlameShot.speed, 100, FlameShot.damage, FlameShot.impactRadius);
-		this.createVisual(FlameShot.sprite, [8]);
-		this.playSound('flames');
-	},
-}, function(flame) {
-	flame.nickName = 'Red Napalm';
-	flame.description = "Napalm power you don't want to mess with.";
-	flame.sprite = 'flameshot';
-	flame.frames = 8;
-	flame.speed = 1.5;
-	flame.damage = 8;
-	flame.impactRadius = 0.5;
-	flame.rating = Math.log(flame.speed + 1) * flame.damage * Math.log(flame.impactRadius + 1);
-	types.shots['FlameShot'] = flame;
-});
-
-/*
- * The shot from hell
- */
-var HellShot = Shot.extend({
-	init: function() {
-		this._super(HellShot.speed, 75, HellShot.damage, HellShot.impactRadius);
-		this.createVisual(HellShot.sprite, [12]);
-		this.playSound('hellshot');
-	},
-}, function(hell) {
-	hell.nickName = 'HDEB';
-	hell.description = 'The High Dark Energy Density is shot by the gate to hell. It catches your soul and gives you the rest.';
-	hell.sprite = 'hellshot';
-	hell.frames = 12;
-	hell.speed = 2.0;
-	hell.damage = 300;
-	hell.impactRadius = 0.5;
-	hell.rating = Math.log(hell.speed + 1) * hell.damage * Math.log(hell.impactRadius + 1);
-	types.shots['HellShot'] = hell;
-});
-
-/*
- * The icy shot
- */
-var IceShot = Shot.extend({
-	init: function() {
-		this._super(IceShot.speed, 200, IceShot.damage, IceShot.impactRadius);
-		this.createVisual(IceShot.sprite, [4]);
-		this.playSound('icy');
-	},
-}, function(ice) {
-	ice.nickName = 'Snowball 5';
-	ice.description = 'An experimental super cold plasma (cold is relative here).';
-	ice.sprite = 'iceshot';
-	ice.frames = 4;
-	ice.speed = 3.5;
-	ice.damage = 15;
-	ice.impactRadius = 0.5;
-	ice.rating = Math.log(ice.speed + 1) * ice.damage * Math.log(ice.impactRadius + 1);
-	types.shots['IceShot'] = ice;
-});
-
-/*
- * A shot from the MG nest
- */
-var MGShot = Shot.extend({
-	init: function() {
-		this._super(MGShot.speed, 25, MGShot.damage, MGShot.impactRadius);
-		this.createVisual(MGShot.sprite, [1, 1, 1, 1], 0.3);
-		this.playSound('mgnest');
-	},
-}, function(mg) {
-	mg.nickName = 'Nato cal. 7.72';
-	mg.description = 'Standard MG shot: 7.72 mm full metal jacket that handles most guys.';
-	mg.sprite = 'mgshot';
-	mg.frames = 4;
-	mg.speed = 8.0;
-	mg.damage = 2;
-	mg.impactRadius = 0.5;
-	mg.rating = Math.log(mg.speed + 1) * mg.damage * Math.log(mg.impactRadius + 1);
-	types.shots['MGShot'] = mg;
-});
-
-/*
- * A laser beam
- */
-var LaserShot = Shot.extend({
-	init: function() {
-		this._super(LaserShot.speed, 25, LaserShot.damage, LaserShot.impactRadius);
-		this.createVisual(LaserShot.sprite, [6, 6, 6, 6]);
-		this.playSound('laser');
-	},
-}, function(laser) {
-	laser.nickName = 'Faser';
-	laser.description = 'Neutrino shot: Hits before fired (from the perspective of any observer).';
-	laser.sprite = 'lasershot';
-	laser.frames = 24;
-	laser.speed = 10;
-	laser.damage = 7;
-	laser.impactRadius = 0.5;
-	laser.rating = Math.log(laser.speed + 1) * laser.damage * Math.log(laser.impactRadius + 1);
-	types.shots['LaserShot'] = laser;
-});
 
 /*
  * The shell shot
  */
-var ShellShot = Shot.extend({
+/*var ShellShot = Shot.extend({
 	init: function() {
 		this._super(ShellShot.speed, 25, ShellShot.damage, ShellShot.impactRadius);
 		this.createVisual(ShellShot.sprite, [1, 1, 1, 1], 0.3);
@@ -145,4 +173,4 @@ var ShellShot = Shot.extend({
 	shell.impactRadius = 0.5;
 	shell.rating = Math.log(shell.speed + 1) * shell.damage * Math.log(shell.impactRadius + 1);
 	types.shots['ShellShot'] = shell;
-});
+});*/
