@@ -5,7 +5,7 @@
 var constants = {
 	ticks: 25,
 	money : 1000000,
-	hitpoints : 5,
+	hitpoints : 10,
 	towerBuildNumber : 1000,
 };
 

@@ -6,13 +6,13 @@
 var Rock = Tower.extend({
 	init: function() {
 		this._super(Rock.speed, 200, Rock.range);
-		this.createVisual(Rock.sprite, [6]);
+		this.createVisual(Rock.sprite, [1]);
 	},
 }, function(rock) {
 	rock.description = "Just a rock ... a big ROCK. If you can't boulder you have to go around.";
 	rock.nickName = 'Rock';
 	rock.sprite = 'rock';
-	rock.frames = 6;
+	rock.frames = 1;
 	rock.shotType = {};
 	rock.speed = 0;
 	rock.range = 0;
@@ -70,13 +70,13 @@ var TemperatureTower = Tower.extend({
 var BaseTower = Tower.extend({
 	init: function() {
 		this._super(BaseTower.speed, 200, BaseTower.range, BaseTower.shotType);
-		this.createVisual(BaseTower.sprite, [6]);
+		this.createVisual(BaseTower.sprite, [1]);
 	},
 }, function(base) {
 	base.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill high speed units.';
 	base.nickName = 'Base Tower';
 	base.sprite = 'BaseTower';
-	base.frames = 6;
+	base.frames = 1;
 	base.shotType = BaseShot;
 	base.speed = 1.0;
 	base.range = 2.0;
