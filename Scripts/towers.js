@@ -52,7 +52,7 @@ var TemperatureTower = Tower.extend({
 		this.createVisual(TemperatureTower.sprite, [4]);
 	},
 }, function(temperature) {
-	temperature.description = 'Burn them down but a bit faster... Excellent for the Sals Insolubles enemies, but fails against the others.';
+	temperature.description = 'Burn them down! .......................or the Insoluble Salts enemies, but fails against the others.';
 	temperature.nickName = 'Temperature Tower';
 	temperature.sprite = 'TemperatureTower';
 	temperature.frames = 4;
