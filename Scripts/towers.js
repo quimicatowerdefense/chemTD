@@ -30,7 +30,7 @@ var WaterTower = Tower.extend({
 		this.createVisual(WaterTower.sprite, [1]);
 	},
 }, function(water) {
-	water.description = 'The Water Tower is cheap but powerful. It can help you a lot against low armored elements.';
+	water.description = 'The Water Tower is cheap but powerful. It can help you a lot against all the elements.';
 	water.nickName = 'Water Tower';
 	water.sprite = 'WaterTower';
 	water.frames = 1;
@@ -52,7 +52,7 @@ var TemperatureTower = Tower.extend({
 		this.createVisual(TemperatureTower.sprite, [4]);
 	},
 }, function(temperature) {
-	temperature.description = 'Burn them down but a bit faster ... Excellent for slow armored enemies, but fails against strong armored elements.';
+	temperature.description = 'Burn them down but a bit faster... Excellent for the Sals Insolubles enemies, but fails against the others.';
 	temperature.nickName = 'Temperature Tower';
 	temperature.sprite = 'TemperatureTower';
 	temperature.frames = 4;
@@ -73,7 +73,7 @@ var BaseTower = Tower.extend({
 		this.createVisual(BaseTower.sprite, [1]);
 	},
 }, function(base) {
-	base.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill high speed units.';
+	base.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill strong enemies.';
 	base.nickName = 'Base Tower';
 	base.sprite = 'BaseTower';
 	base.frames = 1;
@@ -118,12 +118,12 @@ var AcidTower = Tower.extend({
 		this.createVisual(AcidTower.sprite, [1]);
 	},
 }, function(acid) {
-	acid.description = 'Cool. Slow shots, but with high efficiency. The right choice against slow strongly armored units.';
+	acid.description = 'Cool. Slow shots, but with high efficiency. The right choice against strong enemies.';
 	acid.nickName = 'Acid Tower';
 	acid.sprite = 'AcidTower';
 	acid.frames = 1;
 	acid.shotType = AcidShot;
-	acid.speed = 2.0;
+	acid.speed = 2.5;
 	acid.range = 6.0;
 	acid.rating = acid.speed * Math.log(acid.range + 1.0) * acid.shotType.rating;
 	acid.cost = Math.round(acid.rating / 6.0 + 1.0);
@@ -139,7 +139,7 @@ var OxidTower = Tower.extend({
 		this.createVisual(OxidTower.sprite, [1]);
 	},
 }, function(oxid) {
-	oxid.description = "Won't play with you, but does it with high efficiency. Really fast low damage shots.";
+	oxid.description = "Won't play with you, but does it with high efficiency.";
 	oxid.nickName = 'Oxid Tower';
 	oxid.sprite = 'OxidTower';
 	oxid.frames = 1;

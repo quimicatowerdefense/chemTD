@@ -292,7 +292,7 @@ var Maze = Class.extend({
 
 		return true;
 	},
-	tryBuild: function(point, weight) {
+/*	tryBuild: function(point, weight) {
 		if (this.grid[point.x][point.y] !== 1)
 			return false;
 		else if (point.x === this.gridDim.width - 1 || point.x === 0)
@@ -308,7 +308,26 @@ var Maze = Class.extend({
 			this.grid[point.x][point.y] = 1;
 			return false;
 		}
+	},*/
+	
+	tryBuild: function(point, weight) {
+		if (this.grid[point.x][point.y] !== 1)
+			return false;
+		else if (point.x === this.gridDim.width + 1 || point.x === 0)
+			return false;
+
+		this.grid[point.x][point.y] = weight || 0;
+		this.pf.formula = MazeStrategy.euclidean;
+
+		if (this.pf.findPath(this.start, this.end)) {
+			this.paths = {};
+			return true;
+		} else {
+			this.grid[point.x][point.y] = 1;
+			return false;
+		}
 	},
+	
 	tryRemove: function(point) {
 		if (this.grid[point.x][point.y] !== 1) {
 			this.grid[point.x][point.y] = 1;
