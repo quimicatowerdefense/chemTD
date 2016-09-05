@@ -8,7 +8,7 @@ var SalSoluble = Unit.extend({
 		this.createVisual(SalSoluble.sprite, [1,1,1,1]);
 	},
 }, function(SalSoluble) {
-	SalSoluble.speed = 3.0;
+	SalSoluble.speed = 5.0;
 	SalSoluble.hitpoints = 1.5;
 	SalSoluble.description = 'You have to be careful with that plumber.';
 	SalSoluble.nickName = 'SalSoluble';
@@ -31,7 +31,7 @@ var SalInsoluble = Unit.extend({
 		this.createVisual(SalInsoluble.sprite, [1, 1, 1, 1]);
 	},
 }, function(SalInsoluble) {
-	SalInsoluble.speed = 2.0;
+	SalInsoluble.speed = 4.5;
 	SalInsoluble.hitpoints = 20;
 	SalInsoluble.description = 'An ugly SalInsoluble that tries to conquer the zone. Watch out when they mass up!';
 	SalInsoluble.nickName = 'SalInsoluble';

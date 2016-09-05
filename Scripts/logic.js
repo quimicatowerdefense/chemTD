@@ -44,8 +44,8 @@ var GameLogic = Base.extend({
 
 		me.player.addEventListener(events.playerDefeated, function(e) {
 			me.triggerEvent(events.playerDefeated, e);
-			this.createLoser();
 			me.finish();
+			this.createLoser();
 		});
 
 		me.player.addEventListener(events.moneyChanged, function(e) {
