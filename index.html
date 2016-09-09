@@ -12,6 +12,7 @@
 		<div id="money-info" title="Money left"></div>
 		<!--<div id="tower-info" title="Towers built"></div>-->
 		<div id="health-info" title="Health left"></div>
+		<div id="instructions-info" class="on" title="Instructions statusinstr"></div>
 		<div id="time-info">Game started ...</div>
 		<div id="sound-info" class="on" title="Sound status"></div>
 	</div>
@@ -51,6 +52,7 @@
 	var timeInfo = document.querySelector('#time-info');
 	var soundInfo = document.querySelector('#sound-info');
 	var startWaveButton = document.querySelector('#startWave');
+	var instructionsInfo = document.querySelector('#instructions-info');
 	<!--var buyMedipackButton = document.querySelector('#buyMedipack');-->
 	<!--var buyTowerbuildButton = document.querySelector('#buyTowerbuild');-->
 
@@ -120,6 +122,15 @@
 			this.classList.add(status ? off : on);
 			Sound.setVolume(status ? 0 : 1);
 		});
+		
+		instructionsInfo.addEventListener(events.click, function(){
+			var inston = 'on';
+			var instoff = 'off'
+			var statusinstr = this.classList.contains('on');
+			this.classList.remove(statusinstr ? inston : instoff);
+			this.classList.add(statusinstr ? instoff : inston);
+		});
+		
 		canvas.addEventListener(events.click, function(evt) {
 			var mousePos = getMousePosition(evt);
 			var pos = logic.transformCoordinates(mousePos.x, mousePos.y);

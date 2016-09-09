@@ -221,6 +221,7 @@ var GameLogic = Base.extend({
 
 			if (this.maze.tryBuild(pt, newTower.mazeWeight)) {
 				this.player.addMoney(-type.cost);
+				//this.destroyTower(pt);
 				this.addTower(newTower);
 
 				if (!isrock) {

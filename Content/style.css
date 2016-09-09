@@ -118,6 +118,23 @@ button:hover:not(:disabled) {
 	left: 200px;
 }
 
+#instructions-info {
+	background: no-repeat left center;
+	padding-left: 28px;
+	left: 100px;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+#instructions-info.on{
+	background-image: url(icons/instructions.png);
+}
+
+#instructions-info.off{
+	background-image: url(icons/instructions.png);
+}
+
 #sound-info {
 	background: no-repeat right center;
 	padding-right: 28px;
@@ -193,6 +210,7 @@ div.preview-image {
 #towers > div:hover > .info {
 	display: block;
 }
+
 /*
 .cost, .speed, .damage, .range, .rating {
 	height: 28px;
