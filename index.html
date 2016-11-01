@@ -14,6 +14,7 @@ src="C:\Users\Mireia\OneDrive\CHEMISTRY TOWER DEFENSE\chemTD\Content\icons\instr
 <div id="frame" class="hidden">
 	<div id="info">
 		<div id="money-info" title="Money left"></div>
+		<div id="score-info" title="Score left"></div>
 		<!--<div id="tower-info" title="Towers built"></div>-->
 		<div id="health-info" title="Health left"></div>
 		<!--<div id="instructions-info" class="on" title="Instructions statusinstr"></div>-->
@@ -53,6 +54,7 @@ src="C:\Users\Mireia\OneDrive\CHEMISTRY TOWER DEFENSE\chemTD\Content\icons\instr
 	var towerButtons = [];
 	var moneyInfo = document.querySelector('#money-info');
 	var healthInfo = document.querySelector('#health-info');
+	var scoreInfo = document.querySelector('#score-info');
 	<!--var towerInfo = document.querySelector('#tower-info');-->
 	var timeInfo = document.querySelector('#time-info');
 	var soundInfo = document.querySelector('#sound-info');
@@ -105,6 +107,9 @@ src="C:\Users\Mireia\OneDrive\CHEMISTRY TOWER DEFENSE\chemTD\Content\icons\instr
 		});
 		logic.addEventListener(events.moneyChanged, function(player) {
 			moneyInfo.textContent = player.money;
+		});
+		logic.addEventListener(events.scoreChanged, function(player) {
+			scoreInfo.textContent = player.score;
 		});
 		logic.addEventListener(events.healthChanged, function(player) {
 			healthInfo.textContent = player.hitpoints;

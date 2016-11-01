@@ -101,6 +101,12 @@ button:hover:not(:disabled) {
 	left: 0;
 }
 
+#score-info {
+	background: url(icons/score.png) no-repeat left center;
+	padding-left: 28px;
+	left: 100px;
+}
+
 #time-info {
 	width: 100%;
 	text-align: center;

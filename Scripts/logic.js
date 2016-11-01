@@ -51,6 +51,10 @@ var GameLogic = Base.extend({
 		me.player.addEventListener(events.moneyChanged, function(e) {
 			me.triggerEvent(events.moneyChanged, e);
 		});
+		
+		me.player.addEventListener(events.scoreChanged, function(e) {
+			me.triggerEvent(events.scoreChanged, e);
+		});
 
 		me.player.addEventListener(events.healthChanged, function(e) {
 			me.triggerEvent(events.healthChanged, e);
@@ -61,6 +65,7 @@ var GameLogic = Base.extend({
 		me.registerEvent(events.waveFinished);
 		me.registerEvent(events.playerDefeated);
 		me.registerEvent(events.moneyChanged);
+		me.registerEvent(events.scoreChanged);
 		me.registerEvent(events.healthChanged);
 		me.registerEvent(events.waveCreated);
 		me.registerEvent(events.unitSpawned);
@@ -70,6 +75,7 @@ var GameLogic = Base.extend({
 		if (this.state === GameState.unstarted) {
 			this.player.setHitpoints(constants.hitpoints);
 			this.player.setMoney(constants.money);
+			this.player.setScore(constants.score);
 			this.triggerEvent(events.towerNumberChanged, {
 				current: this.getNumShooting(),
 				maximum: this.maxTowerNumber,
@@ -180,6 +186,7 @@ var GameLogic = Base.extend({
 	},
 	endWave: function() {
 		this.player.addMoney(this.currentWave.prizeMoney);
+		this.player.addScore(this.currentWave.prizeScore);
 		this.state = GameState.building;
 
 		for (var i = this.shots.length; i--; ) {
@@ -313,6 +320,7 @@ var WaveList = Class.extend({
 		var n = rand(Math.max(~~(this.index * 0.5), 1), this.index);
 		var maxtime = 1300 * n;
 		wave.prizeMoney = n;
+		wave.prizeScore = n;
 
 		for (var i = 0; i < n; ++i) {
 			var j = rand(0, Math.min(this.unitNames.length, ~~(this.index * 0.2) + 1));
@@ -341,6 +349,7 @@ var Wave = Base.extend({
 		this.startTime = 0;
 		this.units = [];
 		this.prizeMoney = 0;
+		this.prizeScore = 0;
 		this.finished = false;
 		this.registerEvent(events.unitSpawned)
 		this.registerEvent(events.waveFinished);

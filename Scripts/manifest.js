@@ -5,6 +5,7 @@
 var constants = {
 	ticks: 25,
 	money : 30,
+	score : 0,
 	hitpoints : 5,
 	towerBuildNumber : 100000,
 };
@@ -24,6 +25,7 @@ var events = {
 	accomplished : 'accomplished',
 	playerDefeated : 'playerDefeated',
 	moneyChanged : 'moneyChanged',
+	scoreChanged : 'scoreChanged',
 	waveCreated : 'waveCreated',
 	waveFinished : 'waveFinished',
 	waveDefeated : 'waveDefeated',

@@ -87,10 +87,12 @@ var Player = Base.extend({
 		this._super();
 		this.name = name || 'Player';
 		this.money = 0;
+		this.score = 0;
 		this.points = 0;
 		this.hitpoints = 0;
 		this.registerEvent(events.playerDefeated);
 		this.registerEvent(events.moneyChanged);
+		this.registerEvent(events.scoreChanged);
 		this.registerEvent(events.healthChanged);
 	},
 	setMoney: function(value) {
@@ -103,6 +105,17 @@ var Player = Base.extend({
 	},
 	getMoney: function() {
 		return this.money;
+	},
+	setScore: function(value) {
+		this.score = value;
+		this.triggerEvent(events.scoreChanged, this);
+	},
+	addScore: function(value) {
+		this.points +=Math.max(0, value);
+		this.setScore(this.score + value);
+	},
+	getScore: function(){
+		return this.score;
 	},
 	setHitpoints: function(value) {
 		this.hitpoints = Math.max(0, value);
