@@ -5,6 +5,7 @@ body {
 	background-size: 100%;
 }
 
+
 button {
 	font: 16px Arial Black;
 	font-weight: bold;
@@ -210,6 +211,12 @@ div.preview-image {
 #towers > div:hover > .info {
 	display: block;
 }
+
+/*.playerDefeated {
+	background: url(loser.jpg);
+	background-size: 100%;
+}*/
+
 
 /*
 .cost, .speed, .damage, .range, .rating {

@@ -10,7 +10,7 @@ var SalSoluble = Unit.extend({
 }, function(SalSoluble) {
 	SalSoluble.speed = 5.0;
 	SalSoluble.hitpoints = 1.5;
-	SalSoluble.description = 'You have to be careful with that plumber.';
+	SalSoluble.description = 'You have to be careful';
 	SalSoluble.nickName = 'SalSoluble';
 	SalSoluble.sprite = 'SalSoluble';
 	SalSoluble.waterhealth = 14;
@@ -33,7 +33,7 @@ var SalInsoluble = Unit.extend({
 }, function(SalInsoluble) {
 	SalInsoluble.speed = 4.5;
 	SalInsoluble.hitpoints = 20;
-	SalInsoluble.description = 'An ugly SalInsoluble that tries to conquer the zone. Watch out when they mass up!';
+	SalInsoluble.description = 'A Sal Insoluble that tries to conquer the zone';
 	SalInsoluble.nickName = 'SalInsoluble';
 	SalInsoluble.sprite = 'SalInsoluble';
 	SalInsoluble.waterhealth = 16;
@@ -56,7 +56,7 @@ var AcidInsoluble = Unit.extend({
 }, function(AcidInsoluble) {
 	AcidInsoluble.speed = 4.5;
 	AcidInsoluble.hitpoints = 200;
-	AcidInsoluble.description = 'This AcidInsoluble is just a single blob. It is ultra fast and has quite some armor. It will give you some trouble.';
+	AcidInsoluble.description = 'This Acid Insoluble is just a single blob. It is ultra fast and it will give you some trouble.';
 	AcidInsoluble.nickName = 'AcidInsoluble';
 	AcidInsoluble.sprite = 'AcidInsoluble';
 	AcidInsoluble.waterhealth = 10;
@@ -80,7 +80,7 @@ var BaseInsoluble = Unit.extend({
 }, function(BaseInsoluble) {
 	BaseInsoluble.speed = 3.5;
 	BaseInsoluble.hitpoints = 150;
-	BaseInsoluble.description = 'The BaseInsoluble is an ancient warrier that takes quite some hits. His speed is superior to most other units.';
+	BaseInsoluble.description = 'The Base Insoluble is an ancient warrier that takes quite some hits.';
 	BaseInsoluble.nickName = 'BaseInsoluble';
 	BaseInsoluble.sprite = 'BaseInsoluble';
 	BaseInsoluble.waterhealth = 12;
@@ -101,9 +101,9 @@ var metalls = Unit.extend({
 		this.createVisual(metalls.sprite, [1,1, 1, 1] );
 	},
 }, function(metalls) {
-	metalls.speed = 3.0;
+	metalls.speed = 4.0;
 	metalls.hitpoints = 30;
-	metalls.description = 'The metalls with the fire robe is quite fast, but does not take very much.';
+	metalls.description = 'The metall is quite fast, but does not take very much.';
 	metalls.nickName = 'metalls';
 	metalls.sprite = 'metalls';
 	metalls.waterhealth = 16;
@@ -124,9 +124,9 @@ var metallsNobles = Unit.extend({
 		this.createVisual(metallsNobles.sprite, [1, 1, 1, 1]);
 	},
 }, function(metallsNobles) {
-	metallsNobles.speed = 3.3;
+	metallsNobles.speed = 4.3;
 	metallsNobles.hitpoints = 600;
-	metallsNobles.description = 'The unit is actually called metallsNobles and not Armor, however, Armor would have been a good name as well. You will need some fire power to bring him down.';
+	metallsNobles.description = 'The metalls Nobles are actually called metalls Nobles and not Splash, however, Splash would have been a good name as well.';
 	metallsNobles.nickName = 'metallsNobles';
 	metallsNobles.sprite = 'metallsNobles';
 	metallsNobles.waterhealth = 14
@@ -148,9 +148,9 @@ var MateriaOrganica = Unit.extend({
 		this.createVisual(MateriaOrganica.sprite, [1, 1, 1, 1]);
 	},
 }, function(MateriaOrganica) {
-	MateriaOrganica.speed = 2.5;
+	MateriaOrganica.speed = 5.0;
 	MateriaOrganica.hitpoints = 600;
-	MateriaOrganica.description = 'The unit is actually called MateriaOrganica and not Armor, however, Armor would have been a good name as well. You will need some fire power to bring him down.';
+	MateriaOrganica.description = 'The unit is actually called Materia Organica.';
 	MateriaOrganica.nickName = 'MateriaOrganica';
 	MateriaOrganica.sprite = 'MateriaOrganica';
 	MateriaOrganica.waterhealth = 14;

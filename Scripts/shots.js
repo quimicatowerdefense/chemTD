@@ -11,7 +11,7 @@ var WaterShot = Shot.extend({
 	},
 }, function(water) {
 	water.nickName = 'Water Shot';
-	water.description = 'Standard WaterShot: 7.72 mm full metal jacket that handles most guys.';
+	water.description = '';
 	water.sprite = 'WaterShot';
 	water.frames = 4;
 	water.speed = 8.0;
@@ -36,8 +36,8 @@ var TemperatureShot = Shot.extend({
 		this.playSound('TemperatureShot');
 	},
 }, function(temperature) {
-	temperature.nickName = 'Red Napalm';
-	temperature.description = "Napalm power you don't want to mess with.";
+	temperature.nickName = 'Temperature';
+	temperature.description = "";
 	temperature.sprite = 'TemperatureShot';
 	temperature.frames = 8;
 	temperature.speed = 4.5;
@@ -62,8 +62,8 @@ var BaseShot = Shot.extend({
 		this.playSound('BaseShot');
 	},
 }, function(base) {
-	base.nickName = 'HDEB';
-	base.description = 'The High Dark Energy Density is shot by the gate to hell. It catches your soul and gives you the rest.';
+	base.nickName = 'Base';
+	base.description = '';
 	base.sprite = 'BaseShot';
 	base.frames = 12;
 	base.speed = 10.0;
@@ -88,8 +88,8 @@ var AcidShot = Shot.extend({
 		this.playSound('AcidShot');
 	},
 }, function(acid) {
-	acid.nickName = 'Snowball 5';
-	acid.description = 'An experimental super cold plasma (cold is relative here).';
+	acid.nickName = 'Acid';
+	acid.description = '';
 	acid.sprite = 'AcidShot';
 	acid.frames = 4;
 	acid.speed = 4.0;
@@ -115,7 +115,7 @@ var OxidShot = Shot.extend({
 	},
 }, function(oxid) {
 	oxid.nickName = 'OxidShot';
-	oxid.description = 'Neutrino shot: Hits before fired (from the perspective of any observer).';
+	oxid.description = '';
 	oxid.sprite = 'OxidShot';
 	oxid.frames = 24;
 	oxid.speed = 9.5;

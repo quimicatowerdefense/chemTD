@@ -7,12 +7,16 @@
 </head>
 <body>
 <div id="wait"><div id="wait-message">Loading ...</div></div>
+<form method="get" action="C:\Users\Mireia\OneDrive\CHEMISTRY TOWER DEFENSE\chemTD\Content\icons\instructions.jpg">
+<input name="boton1" type="image"
+src="C:\Users\Mireia\OneDrive\CHEMISTRY TOWER DEFENSE\chemTD\Content\icons\instructions.png">
+</form>
 <div id="frame" class="hidden">
 	<div id="info">
 		<div id="money-info" title="Money left"></div>
 		<!--<div id="tower-info" title="Towers built"></div>-->
 		<div id="health-info" title="Health left"></div>
-		<div id="instructions-info" class="on" title="Instructions statusinstr"></div>
+		<!--<div id="instructions-info" class="on" title="Instructions statusinstr"></div>-->
 		<div id="time-info">Game started ...</div>
 		<div id="sound-info" class="on" title="Sound status"></div>
 	</div>
@@ -23,6 +27,7 @@
 	<div id="towers"></div>
 	<div id="buttons">
 		<button id="startWave">Start Wave</button>
+
 		<!--<button id="buyMedipack">Buy Medipack</button>-->
 		<!--<button id="buyTowerbuild">Buy Towerbuild</button>-->
 	</div>
@@ -52,7 +57,7 @@
 	var timeInfo = document.querySelector('#time-info');
 	var soundInfo = document.querySelector('#sound-info');
 	var startWaveButton = document.querySelector('#startWave');
-	var instructionsInfo = document.querySelector('#instructions-info');
+	<!--var instructionsInfo = document.querySelector('#instructions-info');-->
 	<!--var buyMedipackButton = document.querySelector('#buyMedipack');-->
 	<!--var buyTowerbuildButton = document.querySelector('#buyTowerbuild');-->
 
@@ -88,6 +93,8 @@
 		});
 		logic.addEventListener(events.playerDefeated, function() {
 			timeInfo.textContent = 'Game over ...';
+			view.background = images.loser;
+			//background.image = loser;
 		});
 		logic.addEventListener(events.waveCreated, function(wave) {
 			timeInfo.textContent = wave.units.length + ' units remaining';
@@ -123,13 +130,13 @@
 			Sound.setVolume(status ? 0 : 1);
 		});
 		
-		instructionsInfo.addEventListener(events.click, function(){
-			var inston = 'on';
-			var instoff = 'off'
-			var statusinstr = this.classList.contains('on');
-			this.classList.remove(statusinstr ? inston : instoff);
-			this.classList.add(statusinstr ? instoff : inston);
-		});
+		//instructionsInfo.addEventListener(events.click, function(){
+			//var inston = 'on';
+			//var instoff = 'off'
+			//var statusinstr = this.classList.contains('on');
+			//this.classList.remove(statusinstr ? inston : instoff);
+			//this.classList.add(statusinstr ? instoff : inston);
+		//});
 		
 		canvas.addEventListener(events.click, function(evt) {
 			var mousePos = getMousePosition(evt);

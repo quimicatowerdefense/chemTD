@@ -9,7 +9,7 @@ var Rock = Tower.extend({
 		this.createVisual(Rock.sprite, [1]);
 	},
 }, function(rock) {
-	rock.description = "Just a rock ... a big ROCK. If you can't boulder you have to go around.";
+	rock.description = "";
 	rock.nickName = 'Rock';
 	rock.sprite = 'rock';
 	rock.frames = 1;
@@ -30,7 +30,7 @@ var WaterTower = Tower.extend({
 		this.createVisual(WaterTower.sprite, [1]);
 	},
 }, function(water) {
-	water.description = 'The Water Tower is cheap but powerful. It can help you a lot against all the elements.';
+	water.description = 'does anyone know that I am really helpful?';
 	water.nickName = 'Water Tower';
 	water.sprite = 'WaterTower';
 	water.frames = 1;
@@ -52,7 +52,7 @@ var TemperatureTower = Tower.extend({
 		this.createVisual(TemperatureTower.sprite, [4]);
 	},
 }, function(temperature) {
-	temperature.description = 'Burn them down! .......................or the Insoluble Salts enemies, but fails against the others.';
+	temperature.description = 'maybe a bit of temperature is good for someone...';
 	temperature.nickName = 'Temperature Tower';
 	temperature.sprite = 'TemperatureTower';
 	temperature.frames = 4;
@@ -73,7 +73,7 @@ var BaseTower = Tower.extend({
 		this.createVisual(BaseTower.sprite, [1]);
 	},
 }, function(base) {
-	base.description = 'Paint rules! This is the ultimate weapon of war, but it will not kill strong enemies.';
+	base.description = 'I really do not understand why I am always neutralizing the acid';
 	base.nickName = 'Base Tower';
 	base.sprite = 'BaseTower';
 	base.frames = 1;
@@ -118,7 +118,7 @@ var AcidTower = Tower.extend({
 		this.createVisual(AcidTower.sprite, [1]);
 	},
 }, function(acid) {
-	acid.description = 'Cool. Slow shots, but with high efficiency. The right choice against strong enemies.';
+	acid.description = 'I am way more powerful than what you expect';
 	acid.nickName = 'Acid Tower';
 	acid.sprite = 'AcidTower';
 	acid.frames = 1;
@@ -139,7 +139,7 @@ var OxidTower = Tower.extend({
 		this.createVisual(OxidTower.sprite, [1]);
 	},
 }, function(oxid) {
-	oxid.description = "Won't play with you, but does it with high efficiency.";
+	oxid.description = "just a few need me...";
 	oxid.nickName = 'Oxid Tower';
 	oxid.sprite = 'OxidTower';
 	oxid.frames = 1;

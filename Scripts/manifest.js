@@ -4,9 +4,9 @@
  */
 var constants = {
 	ticks: 25,
-	money : 1000000,
-	hitpoints : 10,
-	towerBuildNumber : 1000,
+	money : 30,
+	hitpoints : 5,
+	towerBuildNumber : 100000,
 };
 
 /*
@@ -56,6 +56,9 @@ var resources = {
 		{ name : 'WaterTower', value : 'Content/sprites/WaterTower.png' },
 		{ name : 'WaterShot', value : 'Content/sprites/WaterShot.png' },
 		{ name : 'rock', value : 'Content/sprites/rock_drawing.png' },
+		{ name : 'loser', value : 'Content/loser.jpg'},
+		{ name : 'inici', value : 'Content/INICI_DE_PANTALLA.jpg'},
+		
 		/*{ name : 'shellshot', value : 'Content/sprites/shellshot.png' },*/
 		/*{ name : 'suns', value : 'Content/sprites/suns.png' },*/
 		/*{ name : 'sunshot', value : 'Content/sprites/sunshot.png' },*/

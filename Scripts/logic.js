@@ -219,7 +219,7 @@ var GameLogic = Base.extend({
 			newTower.cost = type.cost;
 			newTower.targets = this.units;
 
-			if (this.maze.tryBuild(pt, newTower.mazeWeight)) {
+			if (this.maze.tryBuild(pt, newTower.mazeWeight) || types.towers['Rock']) {
 				this.player.addMoney(-type.cost);
 				//this.destroyTower(pt);
 				this.addTower(newTower);
@@ -277,6 +277,15 @@ var GameLogic = Base.extend({
 		}
 	},*/
 	
+	/*createLoser: function(){
+	var numRocks = 50
+	var x = [[1,10]];
+	for (var i=0; i< numRocks; i++) {
+       var pos=new Point(x[i][0],x[i][1]);
+       this.buildTower(pos,types.towers['Rock']);
+		}
+	},
+	
 	
 	createLoser: function(){
 		var numRocks=50;
@@ -286,7 +295,8 @@ var GameLogic = Base.extend({
 			var pos = new Point(~~x, ~~y);
 			this.buildTower(pos,types.towers['Rock']);
 		}
-	},
+	},*/
+
 });
 
 /*
