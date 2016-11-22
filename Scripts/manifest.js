@@ -39,7 +39,7 @@ var events = {
  */
 var resources = {
 	images : [
-		{ name : 'background', value : 'Content/background.jpg' },
+		{ name : 'background', value : 'Content/background.JPG' },
 		{ name : 'metallsNobles', value : 'Content/sprites/metallsNobles.png' },
 		{ name : 'MateriaOrganica', value : 'Content/sprites/MateriaOrganica.png' },
 		{ name : 'BaseInsoluble', value : 'Content/sprites/BaseInsoluble.png' },
@@ -58,8 +58,8 @@ var resources = {
 		{ name : 'WaterTower', value : 'Content/sprites/WaterTower.png' },
 		{ name : 'WaterShot', value : 'Content/sprites/WaterShot.png' },
 		{ name : 'rock', value : 'Content/sprites/rock_drawing.png' },
-		{ name : 'loser', value : 'Content/loser.jpg'},
-		{ name : 'inici', value : 'Content/INICI_DE_PANTALLA.jpg'},
+		{ name : 'loser', value : 'Content/loser.JPG'},
+		{ name : 'inici', value : 'Content/INICI_DE_PANTALLA.JPG'},
 		
 		/*{ name : 'shellshot', value : 'Content/sprites/shellshot.png' },*/
 		/*{ name : 'suns', value : 'Content/sprites/suns.png' },*/

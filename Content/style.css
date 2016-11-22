@@ -1,7 +1,7 @@
 body {
 	font: 12px Gadugi;
 	overflow: hidden;
-	background: url(page.jpg);
+	background: url(page.JPG);
 	background-size: 100%;
 }
 
@@ -135,11 +135,11 @@ button:hover:not(:disabled) {
 }
 
 #instructions-info.on{
-	background-image: url(icons/instructions.png);
+	background-image: url(icons/instrucTions.JPG);
 }
 
 #instructions-info.off{
-	background-image: url(icons/instructions.png);
+	background-image: url(icons/instrucTions.JPG);
 }
 
 #sound-info {
