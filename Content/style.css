@@ -135,11 +135,11 @@ button:hover:not(:disabled) {
 }
 
 #instructions-info.on{
-	background-image: url(icons/instrucTions.JPG);
+	background-image: url(icons/instrucTions.jpg);
 }
 
 #instructions-info.off{
-	background-image: url(icons/instrucTions.JPG);
+	background-image: url(icons/instrucTions.jpg);
 }
 
 #sound-info {

@@ -39,7 +39,7 @@ var events = {
  */
 var resources = {
 	images : [
-		{ name : 'background', value : 'Content/background.JPG' },
+		{ name : 'background', value : 'Content/background.jpg' },
 		{ name : 'metallsNobles', value : 'Content/sprites/metallsNobles.png' },
 		{ name : 'MateriaOrganica', value : 'Content/sprites/MateriaOrganica.png' },
 		{ name : 'BaseInsoluble', value : 'Content/sprites/BaseInsoluble.png' },
@@ -58,8 +58,8 @@ var resources = {
 		{ name : 'WaterTower', value : 'Content/sprites/WaterTower.png' },
 		{ name : 'WaterShot', value : 'Content/sprites/WaterShot.png' },
 		{ name : 'rock', value : 'Content/sprites/rock_drawing.png' },
-		{ name : 'loser', value : 'Content/loser.JPG'},
-		{ name : 'inici', value : 'Content/INICI_DE_PANTALLA.JPG'},
+		{ name : 'loser', value : 'Content/loser.jpg'},
+		{ name : 'inici', value : 'Content/INICI_DE_PANTALLA.jpg'},
 		
 		/*{ name : 'shellshot', value : 'Content/sprites/shellshot.png' },*/
 		/*{ name : 'suns', value : 'Content/sprites/suns.png' },*/
@@ -67,7 +67,7 @@ var resources = {
 		/*{ name : 'canontower', value : 'Content/sprites/canontower.png' },*/
 	],
 	sounds : [
-		{ name : 'hold_the_line', value : { ogg : 'Content/music/hold_the_line.ogg', mp3 : 'Content/music/hold_the_line.mp3' }},
+		/*{ name : 'hold_the_line', value : { ogg : 'Content/music/hold_the_line.ogg', mp3 : 'Content/music/hold_the_line.mp3' }},*/
 		{ name : 'burn_them_down', value : { ogg : 'Content/music/TheElementSong.ogg', mp3 : 'Content/music/TheElementSong.mp3' }},
 		{ name : 'ak47-1', value : { ogg : 'Content/effects/ak47-1.ogg', mp3 : 'Content/effects/ak47-1.mp3' }},
 		/*{ name : 'artillery', value : { ogg : 'Content/effects/artillery.ogg', mp3 : 'Content/effects/artillery.mp3' }},*/
